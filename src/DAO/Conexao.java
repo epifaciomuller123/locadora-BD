@@ -14,8 +14,8 @@ public class Conexao {
       Connection con = null;
       try {
           Class.forName("com.mysql.jdbc.Driver");
-          String url = "jbc:mysql://localhost/locadora";
-          con = DriverManager.getConnection(url, "root", "123");
+          String url = "jdbc:mysql://localhost/locadora";
+          con = DriverManager.getConnection(url, "root", "");
        
       }catch (Exception e) {
           JOptionPane.showMessageDialog(null, "Errro na conexão com o banco",
