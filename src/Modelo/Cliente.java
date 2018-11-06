@@ -75,21 +75,25 @@ public class Cliente {
         this.Bairro = Bairro;
     }
 
-    public int getRua() {
+    public String getRua() {
         return Rua;
     }
 
-    public void setRua(int Rua) {
+    public void setRua(String Rua) {
         this.Rua = Rua;
     }
 
-    public String getNumero() {
+    public int getNumero() {
         return Numero;
     }
 
-    public void setNumero(String Numero) {
+    public void setNumero(int Numero) {
         this.Numero = Numero;
     }
+
+    
+
+    
 
     public String getCEP() {
         return CEP;
@@ -106,8 +110,8 @@ public class Cliente {
  private String Telefone;
  private String Email;
  private String Bairro;
- private int Rua;
- private String Numero;
+ private String Rua;
+ private int Numero;
  private String CEP; 
     
 }
