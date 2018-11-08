@@ -5,6 +5,11 @@
  */
 package Principal;
 
+import Visao.Alterar.AlterarCliente;
+import Visao.Cadastrar.CadastrarCliente;
+import Visao.Excluir.ExcluirCliente;
+import Visao.consultar.ConsultarCliente;
+
 /**
  *
  * @author Epifacio mulher
@@ -115,6 +120,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu1.add(jMenuItem6);
 
         jMenuItem1.setText("Cliente");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuItem4.setText("DVD");
@@ -137,6 +147,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu2.add(jMenuItem9);
 
         jMenuItem10.setText("Cliente");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem10);
 
         jMenuItem11.setText("DVD");
@@ -159,6 +174,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu3.add(jMenuItem16);
 
         jMenuItem17.setText("Cliente");
+        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem17ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem17);
 
         jMenuItem18.setText("DVD");
@@ -181,6 +201,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu4.add(jMenuItem22);
 
         jMenuItem23.setText("Cliente");
+        jMenuItem23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem23ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem23);
 
         jMenuItem24.setText("DVD");
@@ -217,6 +242,27 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        new CadastrarCliente().setVisible(true);
+        
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+        new ConsultarCliente().setVisible(true);
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+        new AlterarCliente().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItem17ActionPerformed
+
+    private void jMenuItem23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem23ActionPerformed
+        new ExcluirCliente().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItem23ActionPerformed
 
     /**
      * @param args the command line arguments
