@@ -44,25 +44,25 @@ public class CadastrarCliente extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTF_Codigo = new javax.swing.JTextField();
         jTf_Nome = new javax.swing.JTextField();
-        jTf_RG = new javax.swing.JTextField();
+        jTF_RG = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTf_Rua = new javax.swing.JTextField();
+        jTF_Rua = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jTf_Numero = new javax.swing.JTextField();
-        jTf_Bairro = new javax.swing.JTextField();
+        jTF_Numero = new javax.swing.JTextField();
+        jTF_Bairro = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jTf_Email = new javax.swing.JTextField();
+        jTF_Email = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jTfCPF = new javax.swing.JFormattedTextField();
-        jTf_Telefone = new javax.swing.JFormattedTextField();
-        jTf_CEP = new javax.swing.JFormattedTextField();
-        jTf_Nascimento = new javax.swing.JFormattedTextField();
+        jTF_CPF = new javax.swing.JFormattedTextField();
+        jTF_Telefone = new javax.swing.JFormattedTextField();
+        jTF_CEP = new javax.swing.JFormattedTextField();
+        jTF_Nascimento = new javax.swing.JFormattedTextField();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -125,7 +125,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
 
         jLabel8.setText("Em ail:");
 
-        jTf_RG.setText("        ");
+        jTF_RG.setText("        ");
 
         jLabel9.setText("CPF:");
 
@@ -171,25 +171,25 @@ public class CadastrarCliente extends javax.swing.JFrame {
         );
 
         try {
-            jTfCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            jTF_CPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         try {
-            jTf_Telefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #########")));
+            jTF_Telefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         try {
-            jTf_CEP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
+            jTF_CEP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         try {
-            jTf_Nascimento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            jTF_Nascimento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -205,7 +205,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTF_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -218,31 +218,31 @@ public class CadastrarCliente extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTf_Nome)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTf_RG, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTF_RG, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(34, 34, 34)
                                 .addComponent(jLabel9)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTfCPF))
+                                .addComponent(jTF_CPF))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTf_Rua)
+                                    .addComponent(jTF_Rua)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTf_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTF_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel10)))
                                 .addGap(21, 21, 21)
                                 .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTf_Nascimento)
-                                    .addComponent(jTf_Numero, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)))
+                                    .addComponent(jTF_Nascimento)
+                                    .addComponent(jTF_Numero, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTf_Bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTF_Bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel12)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTf_CEP))
-                            .addComponent(jTf_Email))))
+                                .addComponent(jTF_CEP))
+                            .addComponent(jTF_Email))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -255,7 +255,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTF_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
@@ -263,33 +263,33 @@ public class CadastrarCliente extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jTf_RG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTF_RG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9)
-                            .addComponent(jTfCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTF_CPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(jTf_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTF_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel10)
-                        .addComponent(jTf_Nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(19, 19, 19)
+                        .addComponent(jTF_Nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTf_Rua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTF_Rua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11)
-                    .addComponent(jTf_Numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTF_Numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTf_Bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTF_Bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12)
-                    .addComponent(jTf_CEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTF_CEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTf_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                    .addComponent(jTF_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -299,15 +299,15 @@ public class CadastrarCliente extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        String nome = jTf_Nome.getText();
-       String nascimento = jTf_Nascimento.getText();
-       String cep = jTf_CEP.getText();
-       String rua  = jTf_Rua.getText();
-       String numero  = jTf_Numero.getText();
-       String bairro = jTf_Bairro.getText();
-       String email = jTf_Email.getText();
-       String fone = jTf_Telefone.getText();
-       String cpf = jTfCPF.getText();
-       String rg = jTf_RG.getText();
+       String nascimento = jTF_Nascimento.getText();
+       String cep = jTF_CEP.getText();
+       String rua  = jTF_Rua.getText();
+       String numero  = jTF_Numero.getText();
+       String bairro = jTF_Bairro.getText();
+       String email = jTF_Email.getText();
+       String fone = jTF_Telefone.getText();
+       String cpf = jTF_CPF.getText();
+       String rg = jTF_RG.getText();
        
        if (nome.equals("") || nascimento.equals("") || cep.equals("")
                || rua.equals("") || numero.equals("") || bairro.equals("")
@@ -335,15 +335,15 @@ public class CadastrarCliente extends javax.swing.JFrame {
            Conexao.FecharConexao(con);
            
            jTf_Nome.setText("");
-           jTf_CEP.setText("");
-           jTf_Numero.setText("");
-           jTf_Bairro.setText("");
-           jTf_Email.setText("");
-           jTf_Telefone.setText("");
-           jTf_Rua.setText("");
-           jTf_Nascimento.setText("");
-           jTf_RG.setText("");
-           jTfCPF.setText("");
+           jTF_CEP.setText("");
+           jTF_Numero.setText("");
+           jTF_Bairro.setText("");
+           jTF_Email.setText("");
+           jTF_Telefone.setText("");
+           jTF_Rua.setText("");
+           jTF_Nascimento.setText("");
+           jTF_RG.setText("");
+           jTF_CPF.setText("");
            JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso",
                     "Video Locadora" , JOptionPane.INFORMATION_MESSAGE);
            dispose();
@@ -406,16 +406,16 @@ public class CadastrarCliente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JFormattedTextField jTfCPF;
-    private javax.swing.JTextField jTf_Bairro;
-    private javax.swing.JFormattedTextField jTf_CEP;
-    private javax.swing.JTextField jTf_Email;
-    private javax.swing.JFormattedTextField jTf_Nascimento;
+    private javax.swing.JTextField jTF_Bairro;
+    private javax.swing.JFormattedTextField jTF_CEP;
+    private javax.swing.JFormattedTextField jTF_CPF;
+    private javax.swing.JTextField jTF_Codigo;
+    private javax.swing.JTextField jTF_Email;
+    private javax.swing.JFormattedTextField jTF_Nascimento;
+    private javax.swing.JTextField jTF_Numero;
+    private javax.swing.JTextField jTF_RG;
+    private javax.swing.JTextField jTF_Rua;
+    private javax.swing.JFormattedTextField jTF_Telefone;
     private javax.swing.JTextField jTf_Nome;
-    private javax.swing.JTextField jTf_Numero;
-    private javax.swing.JTextField jTf_RG;
-    private javax.swing.JTextField jTf_Rua;
-    private javax.swing.JFormattedTextField jTf_Telefone;
     // End of variables declaration//GEN-END:variables
 }

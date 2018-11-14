@@ -5,9 +5,17 @@
  */
 package Principal;
 
+import Visao.Alterar.AlterarCategoria;
+import Visao.Alterar.AlterarClassificacao;
 import Visao.Alterar.AlterarCliente;
+import Visao.Cadastrar.CadastrarCategoria;
+import Visao.Cadastrar.CadastrarClassificacao;
 import Visao.Cadastrar.CadastrarCliente;
+import Visao.Excluir.ExcluirCategoria;
+import Visao.Excluir.ExcluirClassificacao;
 import Visao.Excluir.ExcluirCliente;
+import Visao.consultar.ConsultarCategoria;
+import Visao.consultar.ConsultarClassificacao;
 import Visao.consultar.ConsultarCliente;
 
 /**
@@ -114,9 +122,19 @@ public class Menu extends javax.swing.JFrame {
         jMenu1.setText("Cadastrar");
 
         jMenuItem5.setText("Categoria");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem5);
 
         jMenuItem6.setText("Classificação");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem6);
 
         jMenuItem1.setText("Cliente");
@@ -141,9 +159,19 @@ public class Menu extends javax.swing.JFrame {
         jMenu2.setText("Consultar");
 
         jMenuItem8.setText("Categoria");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem8);
 
         jMenuItem9.setText("Classificação");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem9);
 
         jMenuItem10.setText("Cliente");
@@ -168,9 +196,19 @@ public class Menu extends javax.swing.JFrame {
         jMenu3.setText("Alterar");
 
         jMenuItem14.setText("Categoria");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem14);
 
         jMenuItem16.setText("Classificação");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem16);
 
         jMenuItem17.setText("Cliente");
@@ -195,9 +233,19 @@ public class Menu extends javax.swing.JFrame {
         jMenu4.setText("Excluir");
 
         jMenuItem21.setText("Categoria");
+        jMenuItem21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem21ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem21);
 
         jMenuItem22.setText("Classificação");
+        jMenuItem22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem22ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem22);
 
         jMenuItem23.setText("Cliente");
@@ -263,6 +311,38 @@ public class Menu extends javax.swing.JFrame {
         new ExcluirCliente().setVisible(true);
         dispose();
     }//GEN-LAST:event_jMenuItem23ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+       new CadastrarCategoria().setVisible(true);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+      new ConsultarCategoria().setVisible(true);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+            new AlterarCategoria().setVisible(true);
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jMenuItem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem21ActionPerformed
+            new ExcluirCategoria().setVisible(true);
+    }//GEN-LAST:event_jMenuItem21ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+             new CadastrarClassificacao().setVisible(true);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+             new ConsultarClassificacao().setVisible(true);       
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+              new AlterarClassificacao().setVisible(true);
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
+
+    private void jMenuItem22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem22ActionPerformed
+               new ExcluirClassificacao().setVisible(true);
+    }//GEN-LAST:event_jMenuItem22ActionPerformed
 
     /**
      * @param args the command line arguments

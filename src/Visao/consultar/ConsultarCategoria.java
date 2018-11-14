@@ -5,6 +5,14 @@
  */
 package Visao.consultar;
 
+import DAO.CategoriaDAO;
+import DAO.Conexao;
+import Modelo.Categoria;
+import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Epifacio mulher
@@ -12,11 +20,91 @@ package Visao.consultar;
 public class ConsultarCategoria extends javax.swing.JFrame {
 
     /**
-     * Creates new form ConsultarCategoria
+     * Creates new form ConsultarCliente
      */
     public ConsultarCategoria() {
         initComponents();
+        
+        setTitle("Video Locadora");
+        AtualizaTable();
     }
+    
+     private void AtualizaTable() {
+        Connection con = Conexao.AbrirConexao();
+        CategoriaDAO bd = new CategoriaDAO(con);
+        List<Categoria> lista = new ArrayList<>();
+        lista = bd.ListarCategoria();
+        DefaultTableModel tbm = (DefaultTableModel) jTable1.getModel();
+        while (tbm.getRowCount () > 0) {
+            tbm.removeRow(0); 
+        }
+        int i = 0;
+        for (Categoria tab : lista) {
+            tbm.addRow(new String[i]);
+            jTable1.setValueAt(tab.getCodigo(), i, 0);
+            jTable1.setValueAt(tab.getNome(), i, 1);
+            
+            i++;
+        }
+        Conexao.FecharConexao(con);
+    }
+    
+    private void AtualizarTable(){
+     Connection con = Conexao.AbrirConexao();
+        CategoriaDAO bd = new CategoriaDAO(con);
+        List<Categoria> lista = new ArrayList<>();
+        lista = bd.Pesquisar_Nome_Categoria(nome.getText());
+        DefaultTableModel tbm = (DefaultTableModel) jTable1.getModel();
+        while (tbm.getRowCount () > 0) {
+            tbm.removeRow(0); 
+        }
+        int i = 0;
+        for (Categoria tab : lista) {
+            tbm.addRow(new String[i]);
+            jTable1.setValueAt(tab.getCodigo(), i, 0);
+            jTable1.setValueAt(tab.getNome(), i, 1);
+           
+            i++;
+        }
+        Conexao.FecharConexao(con);
+}
+    private void Consultar_Nome_Categoria(){
+     Connection con = Conexao.AbrirConexao();
+        CategoriaDAO bd = new CategoriaDAO(con);
+        List<Categoria> lista = new ArrayList<>();
+        lista = bd.Pesquisar_Nome_Categoria(nome.getText());
+        DefaultTableModel tbm = (DefaultTableModel) jTable1.getModel();
+        while (tbm.getRowCount () > 0) {
+            tbm.removeRow(0); 
+        }
+        int i = 0;
+        for (Categoria tab : lista) {
+            tbm.addRow(new String[i]);
+            jTable1.setValueAt(tab.getCodigo(), i, 0);
+            jTable1.setValueAt(tab.getNome(), i, 1);
+            i++;
+        }
+        Conexao.FecharConexao(con);
+}
+    private void Consultar_Cod_Categoria(){
+     Connection con = Conexao.AbrirConexao();
+        CategoriaDAO bd = new CategoriaDAO(con);
+        List<Categoria> lista = new ArrayList<>();
+        lista = bd.Pesquisar_Cod_Categoria(Integer.parseInt(cod.getText()));
+        DefaultTableModel tbm = 
+                (DefaultTableModel) jTable1.getModel();
+        while (tbm.getRowCount () > 0) {
+            tbm.removeRow(0); 
+        }
+        int i = 0;
+        for (Categoria tab : lista) {
+            tbm.addRow(new String[i]);
+            jTable1.setValueAt(tab.getCodigo(), i, 0);
+            jTable1.setValueAt(tab.getNome(), i, 1);
+            i++;
+        }
+        Conexao.FecharConexao(con);
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,10 +117,10 @@ public class ConsultarCategoria extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        nome = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        cod = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -42,19 +130,34 @@ public class ConsultarCategoria extends javax.swing.JFrame {
 
         jLabel1.setText("Pesquisa por nome:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nomeActionPerformed(evt);
             }
         });
 
         jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Epifacio mulher\\Documents\\NetBeansProjects\\projeto-locadora\\imagens\\pesquisar.jpg")); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Pesquisa por código:");
 
         jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Epifacio mulher\\Documents\\NetBeansProjects\\projeto-locadora\\imagens\\pesquisar.jpg")); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("TODOS");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -74,13 +177,13 @@ public class ConsultarCategoria extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cod, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -97,15 +200,16 @@ public class ConsultarCategoria extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel1)
+                                .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -131,9 +235,24 @@ public class ConsultarCategoria extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nomeActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Consultar_Nome_Categoria();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Consultar_Cod_Categoria();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+        AtualizaTable();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,6 +290,7 @@ public class ConsultarCategoria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField cod;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -179,7 +299,6 @@ public class ConsultarCategoria extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField nome;
     // End of variables declaration//GEN-END:variables
 }
